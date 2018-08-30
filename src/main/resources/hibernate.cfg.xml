@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="hibernate.connection.url">jdbc:hsqldb:file:C:/Users/David/IdeaProjects/HaulmontTask/src/main/db/db</property>
+        <property name="hibernate.connection.username">SA</property>
+
+        <!--&lt;!&ndash; JDBC connection pool (use the built-in) &ndash;&gt;-->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+        <!--Enable DBService's automatic session context management-->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
+
+        <mapping class="com.haulmont.entity.Doctor"/>
+        <mapping class="com.haulmont.entity.Patient"/>
+        <mapping class="com.haulmont.entity.Recipe"/>
+
+    </session-factory>
+</hibernate-configuration>
